@@ -1,0 +1,27 @@
+Chain Observer — Project A working build
+
+Test command (run from project root):
+python -m unittest discover -s chain_observer_v1_3 -t . -v
+Environment: Python 3.11 (standard library only)
+Result: 61/61 tests passed
+
+Coverage includes:
+- 31 retained V1.3 regression tests
+- Project A context anchoring, relation assessment, and topic continuity
+- Reference marker validation, resolution, and external-source handling
+- Whitespace-only locator normalization before state commit
+- Feedback resolution, cancellation, and supersession linkage
+- Legacy snapshot/event compatibility and defensive read views
+- Event sequence, predecessor links, and chain integrity
+- External-source reference consistency between append-time and chain validation
+- Transformation rollback and failed-operation atomicity
+- Tamper/integrity detection and transition provenance
+
+Additional checks:
+- Python compileall: passed
+- Independent audit findings addressed: both targeted findings
+- README test command corrected to match package-root discovery
+
+Limitations remain: this is an in-memory prototype. It does not provide durable
+persistence, concurrency guarantees, source authenticity verification, or
+cryptographic tamper protection.
