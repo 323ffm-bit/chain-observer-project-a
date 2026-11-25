@@ -1,0 +1,32 @@
+CHAIN OBSERVER — PROJECT A / WORKING BUILD 0.1 (AUDIT-CORRECTED)
+
+SOURCE BASELINE
+- Input archive: chain_observer_v1_3_hardened.zip (uploaded by user on 2026-11-21)
+- Original archive SHA-256: 06bf0be954594498cd9ece19b3891e988ef9c3718196be46d83ca0cac46fcdd7
+- The original uploaded archive remains unchanged in the user's Library.
+- Its four extracted files are preserved unchanged under baseline_v1_3/.
+- Public V1.3 repository files were previously inspected as an additional reference; the working build was based on the uploaded hardened ZIP, not by modifying the public repository.
+
+PROJECT A DESIGN
+- Six logical areas: observer, models, events, references, context, rules.
+- No expansion into additional functional modules unless later growth justifies it.
+- V1.3-compatible public methods, legacy snapshot keys, and legacy event fields retained.
+- Event API uses canonical envelopes plus legacy aliases.
+- State operations use copy-on-write aggregate replacement to avoid partial commits.
+- Context relation creation records its initial assessment status in the creation event.
+- Later assessments and feedback lifecycle changes are append-only events.
+- Reference validity, source availability, and source authenticity are distinct.
+
+TESTS
+- Baseline archive tests: freshly executed before implementation; 31/31 passed.
+- Independent audit: all 16 original manifest entries verified by Claude; 58/58 tests independently reproduced.
+- Audit corrections: whitespace-only locator normalization; external_source reference handling in chain validation.
+- Regression tests added for both corrections and malformed external-source identifiers.
+- Current combined suite: 61/61 tests passed locally after corrections.
+- Python compileall: passed after corrections.
+- README test invocation corrected to run from the project root.
+- No database, persistence, import/recovery, concurrency, or cryptographic tamper-proof guarantee.
+
+RELEASE STATUS
+- Local audit-corrected working build only.
+- No GitHub branch, commit, tag, pull request, public release, Zenodo deposit, DOI, or ORCID change was created.
