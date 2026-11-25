@@ -1,0 +1,19 @@
+Chain Observer V1.3 — post-review hardened build
+
+Test suite: test_chain_observer_v1_3.py
+Result: 31/31 passed
+
+Includes the original 23 tests plus adversarial regression tests for:
+- Boolean flips under non-zero numeric tolerance
+- invalid rule configuration rejected before state mutation
+- omitted rules remain UNDETERMINED
+- deep-copy isolation for nested caller-owned property data
+- blocked silent [R] promotion after REVIEW_REQUIRED
+- explicit, auditable review override
+- NaN preservation policy
+- invalid non-finite tolerance rejected
+- malformed non-string rule modes and comparators rejected
+
+Note: the Python environment may print a spreadsheet-runtime warmup traceback
+during startup. This is unrelated environment tooling noise; the test process
+completed successfully with exit code 0.
